@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            /* font-family: "montserrat"; */
+        }
+        .col{
+            margin: 10px;
+            display: grid;
+           grid-template-columns: 1fr 1fr 1fr;
+           grid-auto-rows: 200px;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .child:nth-child(odd){
+            background-color: #018383;
+            color: white;
+            padding: 10px;
+            border: 1px solid white;
+        }
+        .child:nth-child(even){
+            background-color: #02a8a8;
+            color: white;
+            padding: 10px;
+        }
+        .one{
+            grid-row : span 2;
+        }
+        .two{
+            grid-row: span 4;
+
+        }
+        .three{
+            grid-row: span 2;
+        }
+        .four{
+            grid-row: span 2;
+        }
+        .five{
+            grid-row: span 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="btn">
+        <button onclick='fun("25%","0")' id="p">25%</button>
+        <button onclick='fun("50%","1")' id="p">50%</button>
+        <button onclick='fun("100%","2")' id="p">100%</button>
+    </div>
+    <div class="row">
+    <div class="col">
+        <img src="https://th.bing.com/th?id=OIP.xLZFHf9OhzU4Vnl0w6K2FgHaO0&w=175&h=350&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2" class="one" alt="">
+        <img src="https://wallpapercave.com/wp/wp7217981.jpg" class="two">
+        <img src="https://th.bing.com/th?id=OIP.rxNITIJXqIQ3vV2GVokRIQHaJQ&w=223&h=279&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2" class="three" alt="">
+        <img src="https://th.bing.com/th/id/OIP.a_lTlcAK7ZG8QcvMtCw3_gHaNK?w=110&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7"  class="four">
+        <img src="https://th.bing.com/th/id/OIP.PULvLW2yJpjluBVaicIQrwHaEK?w=327&h=184&c=7&r=0&o=5&dpr=1.5&pid=1.7" class="five" alt="">
+    </div>
+</div>
+<script>
+    var c = document.getElementsByClassName("col")
+    function fun(x,n)
+    {
+        var b =document.getElementsByClassName("btn")[0].getElementsByTagName("button");
+        for(var i=0; i<c.length; i++){
+            c[i].style.width=x;
+        }
+    }
+    fun()
+</script>
+</body>
+</html>
